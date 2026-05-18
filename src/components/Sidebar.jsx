@@ -70,12 +70,27 @@ const Sidebars = () => {
       label: 'Responses',
       url: "/connect-inquiries",
     },
-    {
-      label: 'Exhibitors Management',
-      url: "builderparticipate",
-    },
+    // {
+    //   label: 'Exhibitors Management',
+    //   url: "builderparticipate",
+    // },
  
 {
+     label: 'Exhibitor Management',
+      subMenu: [
+        {
+         label: 'Exhibitor List',
+      url: "/builderlists",
+        },
+        {
+         label: 'Month Wise Exhibitor  List',
+      url: "/builderparticipate",
+        },
+       
+      ]
+
+    },
+   {
      label: 'Visitor Management',
       subMenu: [
         {

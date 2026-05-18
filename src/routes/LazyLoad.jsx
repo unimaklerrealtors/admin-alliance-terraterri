@@ -50,10 +50,13 @@ const LazyLoad = () => {
   const CreateStall = lazy(() => import(`../pages/expo/ExpoManagement/CreateStall`))
 
   const BlockNumber = lazy(() => import(`../pages/expo/ExpoMaster/BlockMobile`));
+  const BuilderLists = lazy(() => import(`../pages/expo/BuilderLists`));
 
   // const Expotype = lazy(() => import(`../pages/expo/Expotype`));
   // const Expotype = lazy(() => import(`../pages/expo/Expotype`));
   const isAuthenticated = Boolean(localStorage.getItem('adminToken'));
+
+
   //  const [isAuthenticated, setIsAuthenticated] = useState(Boolean(localStorage.getItem('adminToken')));
 
   //  useEffect(() => {
@@ -103,6 +106,7 @@ const LazyLoad = () => {
           <Route path="/expo/view/:expoId" element={<ExpoSingleview />} />
 
           <Route path="/builderparticipate" element={<BuilderParticipati />} />
+          <Route path="/builderlists" element={<BuilderLists />} />
 
           <Route path='/block-number' element={<BlockNumber />} />
 

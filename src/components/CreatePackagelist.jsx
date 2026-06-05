@@ -1,19 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Loader from '../../../components/Loader';
+import Loader from './Loader';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import { getCountries, getCities, getExpoType } from '../../../utils/HOC';
-import { expoAdminClient } from '../../../utils/httpClient';
-import { toastSuccess, toastError, toastWarning } from '../../../utils/toast';
+import { getCountries, getCities, getExpoType } from '../utils/HOC';
+import { expoAdminClient } from '../utils/httpClient';
+import { toastSuccess, toastError, toastWarning } from '../utils/toast';
 import classNames from 'classnames';
-import Pagenation from '../../../utils/Pagenation';
+import Pagenation from '../utils/Pagenation';
 
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-
-const CreatePackage = () => {
-
-  
+const CreatePackagelist = () => {
   const [show, setShow] = useState(false);
   const [countrys, setCountry] = useState([]);
   const [cities, setCities] = useState([]);
@@ -31,16 +26,6 @@ const CreatePackage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
   const [totalPages, setTotalPages] = useState(1);
-
-
-
-  
-      const [showw, setShoww] = useState(false);
-  
-      const handleClose = () => setShow(false);
-      const handleShoww = () => setShow(true);
-    
-
 
   const stallTypeList = [
     { label: "Standard", value: "Standard" },
@@ -278,7 +263,7 @@ const CreatePackage = () => {
                         <h3 className="card-title">Create Package</h3>
                       </div>
                       <div className="col-md-8">
-                        {/* <div className="mb-0 d-flex align-items-center ">
+                        <div className="mb-0 d-flex align-items-center ">
                           <select className="form-select ml-2 p-0 ps-1" value={selectedCountry} onChange={(e) => setSelectedCountry(e.target.value)}>
                             <option value="">Select Country</option>
                             {[...new Set(expos.map((expo) => expo.country))].map((country, index) => (
@@ -303,7 +288,7 @@ const CreatePackage = () => {
                           </select>
 
                           <button onClick={handleExploreClick} className="btn btn-primary ml-2 p-0 ps-1 pe-2">Search</button>
-                        </div> */}
+                        </div>
                       </div>
                     </div>
 
@@ -317,21 +302,19 @@ const CreatePackage = () => {
                               {/* <th>Stall Type</th> */}
                               <th>Country</th>
                               <th>City</th>
-                              <th>Package View</th>
-                              {/* <th>Action</th> */}
+                              <th>Amount</th>
+                              <th>Edit</th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
                               <td>1</td>
                               <td>VisionAirprox</td>
+                              {/* <td>1</td> */}
                               <td>USA</td>
                               <td>Dollas</td>
-                                                  <td><Button variant="primary" onClick={handleShoww} className='listin_btn'>View</Button></td>
-                                                  {/* <td><Button variant="primary" onClick={handleShoww} className='listin_btn'>View</Button></td> */}
-                            
-                              {/* <td>10Lakhs</td> */}
-
+                              <td>10Lakhs</td>
+                              <td>1</td>
                             </tr>
                           </tbody>
                           {/* <tbody>
@@ -376,7 +359,7 @@ const CreatePackage = () => {
                 </div>
               </div>
 
-              {/* <Offcanvas show={show} onHide={() => setShow(false)} placement="end">
+              <Offcanvas show={show} onHide={() => setShow(false)} placement="end">
                 <Offcanvas.Header closeButton></Offcanvas.Header>
                 <Offcanvas.Body>
                   <div className="card">
@@ -502,118 +485,7 @@ const CreatePackage = () => {
                     </div>
                   </div>
                 </Offcanvas.Body>
-              </Offcanvas> */}
-
-
-                  <Modal show={show} onHide={handleClose}>
-                        <Modal.Header closeButton>
-                         
-                        </Modal.Header>
-                       
-                        <div className='popup'>
-                        <div className="row justify-content-center">
-                          <div className="col-md-12">
-                            <div className="card">
-                              <div className="card-header">
-                                <h3 className="card-title">Stall Visitors</h3>
-                               
-                              </div>
-                              <div className="card-body">
-                                <div className="table-responsive-md">
-              <div className="table-responsive-md">
-                        <table className="table text-nowrap mb-0">
-                          <thead>
-                            <tr>
-                              <th>S.no</th>
-                              <th>White Lable Name</th>
-                              {/* <th>Stall Type</th> */}
-                              <th>Country</th>
-                              <th>City</th>
-                              <th>Amount</th>
-                              <th>Edit</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                          </tbody>
-                          <tbody>
-
-                            <tr>
-                              <td>1</td>
-                              <td>Airpropx</td>
-                              <td>India</td>
-                              <td>Hyderabad</td>
-                              <td>100000</td>
-                              <td>Delete</td>
-                            </tr>
-                            <tr>
-                              <td>1</td>
-                              <td>Airpropx</td>
-                              <td>India</td>
-                              <td>Hyderabad</td>
-                              <td>100000</td>
-                              <td>Delete</td>
-                            </tr>
-                            <tr>
-                              <td>1</td>
-                              <td>Airpropx</td>
-                              <td>India</td>
-                              <td>Hyderabad</td>
-                              <td>100000</td>
-                              <td>Delete</td>
-                            </tr>
-                            <tr>
-                              <td>1</td>
-                              <td>Airpropx</td>
-                              <td>India</td>
-                              <td>Hyderabad</td>
-                              <td>100000</td>
-                              <td>Delete</td>
-                            </tr>
-                            {/* {filteredData.length > 0 ? (
-                              filteredData.map((item, index) => (
-                                <tr className={getDynamicClass(item.expoType)} key={item.newPckId || index}>
-                                  <td>{(currentPage - 1) * itemsPerPage + index + 1}</td>
-                                  <td>{item?.expoType}</td>
-                                  <td>{item?.stallType}</td>
-                                  <td>{item?.city}</td>
-                                  <td>{item?.country}</td>
-                                  <td>{item?.amount}</td>
-                                  <td>
-                                    <i
-                                      className="fa fa-edit mr-2"
-                                      style={{ cursor: 'pointer', color: 'blue' }}
-                                      onClick={() => edit(item)}
-                                    ></i>
-                                    <i
-                                      className="fa fa-trash"
-                                      style={{ cursor: 'pointer', color: 'red' }}
-                                      onClick={() => deleteType(item?.newPckId)}
-                                    ></i>
-                                  </td>
-                                </tr>
-                              ))
-                            ) : (
-                              <tr>
-                                <td colSpan="7" className="text-center mt-3">No packages found.</td>
-                              </tr>
-                            )} */}
-                          </tbody>
-                        </table>
-                      </div>
-                      <Pagenation
-                        currentPage={currentPage}
-                        setCurrentPage={setCurrentPage}
-                        totalPages={totalPages}
-                      />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-              
-                </div>
-                      </Modal>
-
+              </Offcanvas>
             </div>
           </div>
         </div>

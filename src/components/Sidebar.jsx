@@ -31,7 +31,7 @@ const Sidebars = () => {
           url: "/expo-banner",
         },
         {
-          label: 'Create Package',
+          label: 'White Lable Package',
           url: "/package/add",
         },
         {
@@ -66,10 +66,7 @@ const Sidebars = () => {
         // },
       ],
     },
-    {
-      label: 'Responses',
-      url: "/connect-inquiries",
-    },
+   
     // {
     //   label: 'Exhibitors Management',
     //   url: "builderparticipate",
@@ -109,7 +106,28 @@ const Sidebars = () => {
       ]
 
     },
+   {
+     label: 'Responses',
+      subMenu: [
+        {
+         label: 'Register Builder Lists',
+      url: "/",
+        },
+             {
+      label: 'Connect With us',
+      url: "/connect-inquiries",
+    },
+    {
+      label: 'Book a Demo',
+      url: "/connect-inquiries",
+    },
     
+      
+
+      ]
+
+    },
+
   ];
 
 

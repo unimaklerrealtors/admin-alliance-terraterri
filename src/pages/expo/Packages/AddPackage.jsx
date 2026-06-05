@@ -26,7 +26,7 @@ const AddPackage = () => {
           </div>
 
           <div className="cardd">
-          <h6 className="createHead mb-4">Create Package : </h6>
+          <h6 className="createHead mb-4">Create Packagee : </h6>
             <div className="row">
               <div className="col-md-12 ">
                 <form>

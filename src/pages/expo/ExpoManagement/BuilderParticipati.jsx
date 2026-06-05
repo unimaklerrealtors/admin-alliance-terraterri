@@ -148,6 +148,11 @@ const BuilderParticipati = () => {
          </div>
   
          <Modal show={show} onHide={handleClose}>
+
+          <div className='popup d-flex align-items-center justify-content-start'>
+<div className='col-md-2'>June 2026</div>
+<div className='col-md-3'><input type="date" className='form-control' /></div>
+            </div>
           <Modal.Header closeButton>
            
           </Modal.Header>

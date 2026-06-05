@@ -353,7 +353,7 @@ const ExpoBannerImage = () => {
                           <h3 className="card-title">Expo Banner Images</h3>
                         </div>
                         <div className="col-md-8">
-                          <div className="mb-0 d-flex">
+                          {/* <div className="mb-0 d-flex">
                             <select
                               className="form-select ml-2 p-0 ps-1"
                               name="filterCountry"
@@ -402,13 +402,13 @@ const ExpoBannerImage = () => {
                               Search
                             </button>
 
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                     </div>
                     <div className="card-body">
                       <div className="table-responsive-md">
-                        <table className="table text-nowrap mb-0">
+                        {/* <table className="table text-nowrap mb-0">
                           <thead>
                             <tr>
                               <th>S.no</th>
@@ -461,13 +461,34 @@ const ExpoBannerImage = () => {
                               </tr>
                             )}
                           </tbody>
+                        </table> */}
+                        <table className="table text-nowrap mb-0">
+                          <thead>
+                            <tr>
+                              <th>S.no</th>
+                              <th>Image</th>
+                              <th>Action</th>
+                            </tr>
+                          </thead>
+
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td><img src="image1.jpg" alt="Image 1" width={100} height={60} /></td>
+                              <td><button className='btn-danger'>
+                                
+                                <MdDelete className='delete-ic ' />
+                                </button>
+                                </td>
+                            </tr>
+                          </tbody>
                         </table>
                       </div>
-                      <Pagenation
+                      {/* <Pagenation
                         currentPage={currentPage}
                         setCurrentPage={setCurrentPage}
                         totalPages={totalPages}
-                      />
+                      /> */}
                     </div>
                   </div>
                 </div>
@@ -496,7 +517,7 @@ const ExpoBannerImage = () => {
                   <div className="card">
                     <div className="card-body">
                       <form className="custom-validation">
-                        <div className="mb-3">
+                        {/* <div className="mb-3">
                           <div className="form-floating">
                             <select
                               className="form-select"
@@ -613,7 +634,7 @@ const ExpoBannerImage = () => {
                               </div>
                             </div>
                           </div>
-                        )}
+                        )} */}
 
                         <div className="mb-3">
                           <div className="form-floating">

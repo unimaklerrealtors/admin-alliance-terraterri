@@ -79,22 +79,36 @@ const LazyLoad = () => {
     <Suspense fallback={<Loader />}>
       <Routes>
         {/* //////////////////////////////// Masters    /////////////////////////////// */}
-        <Route path="/" element={<Login />} />
-        {/* <PrivateRoute path="/expodashboard" element={<Expodashboard />} /> */}
-        <Route element={<ProtectedRoute isAuthenticated={isAuthenticated} />}>
+          <Route path="/" element={<Login />} />
+
+          {/* <PrivateRoute path="/expodashboard" element={<Expodashboard />} /> */}
+
+          <Route element={<ProtectedRoute isAuthenticated={isAuthenticated} />}>
 
           <Route path="/dashboard" element={<Expodashboard />} />
+
           <Route path="/expo/type" element={<Expotype />} />
+
           <Route path="/masters/city" element={<CityMaster />} />
+
           <Route path="/masters/country" element={<CountryMaster />} />
+
           <Route path="/expo-banner" element={<ExpoBanImage />} />
+
           <Route path="/package/add" element={<CreatePackage />} />
+
           <Route path="/source" element={<Source />} />
+
           <Route path="/expo/create" element={<MultiStepForm />} />
+
           <Route path="/expo/create/:expoUnqCode" element={<MultiStepForm />} />
+
           <Route path="/expo/ongoing" element={<OnGoingExpo />} />
+
           <Route path="/expo/future" element={<FutureExpo />} />
+
           <Route path="/expo/completed" element={<CompletedExpo />} />
+
           <Route path="/expo/deleted" element={<DeletedExpo />} />
 
           <Route path="/bookingmonths" element={<BookingMoths />} />
@@ -106,6 +120,7 @@ const LazyLoad = () => {
           <Route path="/expo/view/:expoId" element={<ExpoSingleview />} />
 
           <Route path="/builderparticipate" element={<BuilderParticipati />} />
+
           <Route path="/builderlists" element={<BuilderLists />} />
 
           <Route path='/block-number' element={<BlockNumber />} />
@@ -114,11 +129,7 @@ const LazyLoad = () => {
 
           <Route path="/visitors-by-expo/:expoUnqCode" element={<NoofVisitorReg />} />
 
-
-
           <Route path="/layoutview" element={<LayoutView />} />
-
-
 
           <Route path="/budget/add" element={<AddBudget />} />
 
